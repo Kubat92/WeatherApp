@@ -5,6 +5,8 @@ const city = document.querySelector('.city');
 const deg = document.querySelector('.deg');
 const wind = document.querySelector('.wind');
 const desc = document.querySelector('.desc');
+const humd = document.querySelector('.humd');
+
 
 let weatherData;
 
@@ -45,6 +47,7 @@ btn.addEventListener('click', () => {
 const buildHTML = (weatherData) => {
     city.innerHTML = weatherData.name;
     desc.innerHTML = weatherData.weather[0].description;
+    humd.innerHTML = `humidity ${weatherData.main.humidity} %`;
     deg.innerHTML = `temperature ${weatherData.main.temp} °C`;
     wind.innerHTML = `wind speed ${weatherData.wind.speed} m/s`;
 }
